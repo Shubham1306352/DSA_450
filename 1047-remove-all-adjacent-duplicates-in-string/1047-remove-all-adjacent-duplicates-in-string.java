@@ -5,16 +5,16 @@ class Solution {
         
 
         
-        StringBuilder res = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         
         for(int i=0;i<s.length();i++){
-            if(res.length() == 0 || s.charAt(i) != res.charAt(res.length()-1))
-                res.append(s.charAt(i));
+            if(sb.length() == 0 || s.charAt(i) != sb.charAt(sb.length()-1))
+                sb.append(s.charAt(i));
             else
-                res.deleteCharAt(res.length()-1);
+                sb.deleteCharAt(sb.length()-1);
         }
         
-        return res.toString();
+        return sb.toString();
         
         
     }
