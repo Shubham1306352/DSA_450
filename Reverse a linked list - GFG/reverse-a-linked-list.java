@@ -89,8 +89,13 @@ class Solution
     head=previous;
     
     return head;
-        */
-        
+ 
+ 
+ 
+ */  
+ 
+ 
+ /*Recursive approach */      
         class Solution
   {
     
