@@ -93,8 +93,9 @@ class Solution
         }
         
         node.next=reverse(current,k);
-        return previous;
         
+         node=previous;
+        return node;
         
         
         
