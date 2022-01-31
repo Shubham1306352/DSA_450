@@ -46,7 +46,8 @@ class Compute {
    
    public void rotate(int arr[], int n)
    {
-       int y = arr[arr.length-1], i;
+     int i;
+       int y = arr[arr.length-1];
       for (i = arr.length-1; i > 0; i--)
          arr[i] = arr[i-1];
       arr[0] = y;
