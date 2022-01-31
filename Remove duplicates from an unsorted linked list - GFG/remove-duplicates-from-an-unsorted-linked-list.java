@@ -95,10 +95,10 @@ class Solution
          Node previous = null;
          HashSet<Integer> hs = new HashSet<Integer>();
          while(current!=null){
-            if(hs.contains(current.data)){
+            if(hs.contains(current.data))
+            {
                 previous.next=current.next;
                 current = current.next;
-                
             }
             else
             {
