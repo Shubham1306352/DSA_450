@@ -32,7 +32,6 @@ class Solution{
         String maximum="";
         int maximumindex=0;
         int index=0;
-        ArrayList<String>list=new ArrayList<String>();
         for(int i=0;i<S.length();i++)
         {
             index=i;
@@ -40,7 +39,7 @@ class Solution{
             {
                 a=a+S.charAt(j);
                 
-                if(paline(a)>0)
+                if(ispalinedrome(a))
                 {
                    if(a.length()>maximum.length())
                    {
@@ -62,16 +61,16 @@ class Solution{
         }
         return maximum;
     }
-    static int paline(String S)
+    static boolean ispalinedrome(String S)
     {
         for(int i=0,j=S.length()-1;i<=j;i++,j--)
         {
             if(S.charAt(i)!=S.charAt(j))
             {
-                return 0;
+                return false;
             }
             
         }
-        return S.length();
+        return true;
     }
 }
