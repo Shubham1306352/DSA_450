@@ -28,29 +28,25 @@ class GFG
 class Solution{
     static int minJumps(int[] arr){
         // your code here
-    int count =0;
-     int jump=0;
-     int newjump=0;
-   
-    for (int  i=0;i<arr.length-1;i++)
-    {
-        if(i+arr[i]>jump)
-            jump=i+arr[i];
-        if(i==newjump)
-        {
-            count=count+1;
-            newjump=jump;
-        }   
-        if(arr[i]==0 &&i== jump) 
+    
+       
+      int count = 0;
+      int j = 0;
+      int k = 0;
+      
+      
+      for(int i=0;i<arr.length-1;i++){
+          if(i+arr[i] > j)
+              j = i+arr[i];
+          if(i==k){
+              count++;
+              k=j;
+          }
+          
+          if(arr[i] == 0 && i==j)
              return -1;
-    } 
-    return count;
-   
-   
-   
-   
-   
-   
-   
-    }
+              
+          }
+          return count;
+   }
 }
