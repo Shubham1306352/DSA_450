@@ -84,22 +84,55 @@ class Sol
     {
         Node start=new Node(0);
         Node temp=start;
-   while(head1!=null && head2!=null)
-   {
-       if(head1.data==head2.data)
+        Node h1=null;
+        Node h2=null;
+   
+   
+       for(h1=head1;h1!=null;h1=h1.next)
        {
-           Node node=new Node(head1.data);
-           temp.next=node;
-           temp=node;
-           head1=head1.next;
-           head2=head2.next;
+           int c=0;
+            for(h2=head2;h2!=null;h2=h2.next)
+            {
+                
+               if(h1.data==h2.data && c==0)
+               {
+                Node ans= new Node(h1.data);
+                temp.next=ans;
+                temp=ans;
+                c++;
+               }
+            }        
+       }         
+        temp.next=null;
+        return start.next;
+                
+                
+                
+                
+                
+               
+                
+            }
+           
        }
-       else if(head1.data<head2.data)
-         head1=head1.next;
-       else if(head2.data<head1.data)
-         head2=head2.next;
-   }
-   return start.next;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
         
         
         
@@ -113,5 +146,3 @@ class Sol
         
         
         
-    }
-}
