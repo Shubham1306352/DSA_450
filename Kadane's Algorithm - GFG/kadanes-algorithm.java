@@ -35,20 +35,20 @@ class Solution{
     //Function to find the sum of contiguous subarray with maximum sum.
     long maxSubarraySum(int arr[], int n){
         
-        int maxsum= arr[0];
-        int sum=0;
-        for(int i=0;i<n;i++)
+        int maxsum=arr[0];
+        int currentsum=arr[0];
+        for(int i=1;i<n;i++)
         {
-         sum +=arr[i];
-         if(sum>maxsum)
-         {
-             maxsum=sum;
-         }
-         if(sum<0)
-         {
-         sum=0;
-         }
+            if(currentsum>=0)
+            currentsum+=arr[i];
+            
+            else
+            currentsum=arr[i];
+            
+            if(currentsum>maxsum)
+            maxsum=currentsum;
         }
+        
         return maxsum;
     }
     
