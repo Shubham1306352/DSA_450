@@ -70,9 +70,8 @@ class Solution
 	   HashSet <Integer> hs = new HashSet <>();
 	   int max=arr[N-1];
 	   for(int i=0;i<N;i++)
-  {
       hs.add(arr[i]);
-  }	   
+   
 	   int count=0;
 	   int maxi=1;
 	   for(int i=0;i<max;i++)
