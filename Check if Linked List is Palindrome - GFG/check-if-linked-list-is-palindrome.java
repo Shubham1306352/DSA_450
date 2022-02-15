@@ -102,24 +102,55 @@ class Solution
     boolean isPalindrome(Node head) 
     {
         //Your code here
-        Node ptr=head;
-        ArrayList<Integer> list=new ArrayList<>();
-        while(ptr!=null)
+        int size=0;
+        Node tmp=head;
+        while(tmp!=null)
         {
-            list.add(ptr.data);
-            ptr=ptr.next;
+          size++;
+          tmp=tmp.next;  
         }
-        int i=0,j=(list.size())-1;
-        while(i<j)
+        Node m=head;
+        
+        int i=0;
+        while(i<size/2)
         {
-            if(list.get(i)!=list.get(j))
+        m=m.next;
+        i++;
+        }
+        
+        Node curr=head.next;
+        Node prev=head;
+        
+        
+        int j=1;
+        while(j<size/2)
+        {
+           Node next=curr.next; 
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+            
+            j++;
+        }
+        head.next=null;
+        head=prev;
+        Node p=head;
+        
+        if(size%2!=0)
+        m=m.next;
+        
+        while(m!=null&&p!=null)
+        {
+            if(m.data!=p.data)
             {
                 return false;
+                
             }
+            m=m.next;
+            p=p.next;
             
-            i++;
-            j--;
         }
         return true;
+        
     }    
 }
