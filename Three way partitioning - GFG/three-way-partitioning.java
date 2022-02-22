@@ -97,11 +97,23 @@ class GFG{
 //User function Template for Java
 
 class Solution{
-    //Function to partition the array around the range such 
-    //that array is divided into three parts.
-    public void threeWayPartition(int array[], int a, int b)
-    {
-        // code here 
-        Arrays.sort(array);
-    }    
+    public void threeWayPartition(int arr[], int a, int b){
+        int lo=0,mid=0,hi=arr.length-1;
+        while(mid<=hi){
+            if(arr[mid]<a){
+                swap(arr,lo,mid);
+                lo++;mid++;
+            }else if(arr[mid]>=a &&arr[mid]<=b){
+                mid++;
+            }else{
+                swap(arr,hi,mid);
+                hi--;
+            }
+        }
+    }
+    public void swap(int[] arr,int l,int r){
+        int temp = arr[l];
+        arr[l]=arr[r];
+        arr[r]=temp;
+    }
 }
