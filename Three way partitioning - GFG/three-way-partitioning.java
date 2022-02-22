@@ -98,16 +98,16 @@ class GFG{
 
 class Solution{
     public void threeWayPartition(int arr[], int a, int b){
-        int lo=0,mid=0,hi=arr.length-1;
-        while(mid<=hi){
-            if(arr[mid]<a){
-                swap(arr,lo,mid);
-                lo++;mid++;
-            }else if(arr[mid]>=a &&arr[mid]<=b){
-                mid++;
+        int l=0,curr=0,h=arr.length-1;
+        while(curr<=h){
+            if(arr[curr]<a){
+                swap(arr,l,curr);
+                l++;curr++;
+            }else if(arr[curr]>=a &&arr[curr]<=b){
+                curr++;
             }else{
-                swap(arr,hi,mid);
-                hi--;
+                swap(arr,h,curr);
+                h--;
             }
         }
     }
