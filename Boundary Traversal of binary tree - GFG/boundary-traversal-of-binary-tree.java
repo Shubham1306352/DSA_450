@@ -167,12 +167,13 @@ class Solution
 	}
 	static void leaftraversal(Node node, ArrayList <Integer> ans)
 	{
+	  //inorder traversal we can do even preorder also
+	  if(node.left!=null)leaftraversal(node.left,ans);
 	  if(isleaf(node)==true)
 	  {
 	      ans.add(node.data);
 	      return;
 	  }
-	  if(node.left!=null)leaftraversal(node.left,ans);
 	  if(node.right!=null)leaftraversal(node.right,ans);
 	    
 	}
